@@ -63,6 +63,7 @@ from . import system_health
 from . import warm_restart
 from . import plugins
 from . import syslog
+from . import tx_monitor
 
 # Global Variables
 PLATFORM_JSON = 'platform.json'
@@ -292,6 +293,9 @@ cli.add_command(warm_restart.warm_restart)
 
 # syslog module
 cli.add_command(syslog.syslog)
+
+#tx monitor module
+config.add_command(tx_monitor.tx_monitor)
 
 # Add greabox commands only if GEARBOX is configured
 if is_gearbox_configured():

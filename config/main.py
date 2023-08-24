@@ -52,6 +52,7 @@ from . import plugins
 from .config_mgmt import ConfigMgmtDPB, ConfigMgmt
 from . import mclag
 from . import syslog
+from . import tx_monitor
 
 # mock masic APIs for unit test
 try:
@@ -1231,6 +1232,9 @@ config.add_command(mclag.mclag_unique_ip)
 
 # syslog module
 config.add_command(syslog.syslog)
+
+#tx monitor module
+config.add_command(tx_monitor.tx_monitor)
 
 @config.command()
 @click.option('-y', '--yes', is_flag=True, callback=_abort_if_false,
