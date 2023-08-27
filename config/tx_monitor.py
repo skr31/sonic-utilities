@@ -25,17 +25,15 @@ def tx_monitor_set():
 @click.argument('thresh', required=True, type=int)
 @clicommon.pass_db
 def set_threshold(db, thresh):
-    click.echo("setting threshold to {}".format(thresh))
     set_param("threshold", thresh, db)
 
 #
 # 'time_period' subcommand ('config tx_monitor set time_period ...')
 #
-@tx_monitor_set.command('time_period')
+@tx_monitor_set.command('time-period')
 @click.argument('time', required=True, type=int)
 @clicommon.pass_db
 def set_time_period(db, time):
-    click.echo("setting time period to {}".format(time))
     set_param("time_period", time, db)
 
 def set_param(param_type, param_value, db):

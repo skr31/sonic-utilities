@@ -295,7 +295,7 @@ cli.add_command(warm_restart.warm_restart)
 cli.add_command(syslog.syslog)
 
 #tx monitor module
-config.add_command(tx_monitor.tx_monitor)
+cli.add_command(tx_monitor.tx_monitor)
 
 # Add greabox commands only if GEARBOX is configured
 if is_gearbox_configured():
